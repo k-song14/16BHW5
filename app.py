@@ -7,7 +7,6 @@ flask run
 '''
 
 from flask import Flask, g, render_template, request
-from flask import redirect, url_for, abort
 import numpy as np
 import sqlite3
 
@@ -32,6 +31,34 @@ def submit():
         except:
             return render_template('submit.html', error=True)
 
+def get_message_db():
+    try:
+        return g.message_db
+    except:
+        g.message_db = sqlite3.connect("messages_db.sqlite")
+        cmd = \
+        '''
+        CREATE TABLE IF NOT EXISTS `messages` (
+            id  INTEGER PRIMARY KEY AUTOINCREMENT  ,
+            name TEXT NOT NULL,
+            message TEXT NOT NULL
+        );
+        '''
+        cursor = g.message_db.cursor()
+        cursor.execute(cmd)
+        return g.message_db
+
+def insert_message(request):
+    conn = get_message_db()
+    cmd = \
+    '''
+    INSERT INTO messages
+    VALUES (name, message)
+    '''
+    cursor = conn.cursor()
+    cursor.execute(cmd)
+    conn.commit()
+    conn.close()
 
 @app.route('/view/')
 def view():
