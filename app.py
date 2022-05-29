@@ -28,7 +28,7 @@ def submit():
             message = request.form['message']
             name = request.form['name']
             # call the database function if successful submission
-            return render_template('submit.html', thanks=True, message=insert_message(message), name=insert_message(name))
+            return render_template('submit.html', message=insert_message(message), name=insert_message(name))
         except:
             return render_template('submit.html', error=True)
 
@@ -66,11 +66,11 @@ def view():
 
     #render template
     #return render_template('view.html', messages = random_messages(5))
-    db = get_message_db()
+    #db = get_message_db()
 
     #SQL command
-    messages = db.execute("SELECT message FROM messages").fetchall()
-    return render_template('view.html', messages = messages)
+    #messages = db.execute("SELECT message FROM messages").fetchall()
+    return render_template('view.html')
 
 #def random_messages(n):
     # refer to insert_messages and discussion view function 
