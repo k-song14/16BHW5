@@ -77,7 +77,7 @@ def view():
     # HINT SQL command - ORDER BY RANDOM()
 
     #connect database
-    db = get_message_db()
+    #db = get_message_db()
 
     #SQL command
-    messages = db.execute("SELECT * FROM").fetchall()
+    #messages = db.execute("SELECT * FROM").fetchall()
