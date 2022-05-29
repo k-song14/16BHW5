@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <header>
     <h2>Submit</h2>
 </header>
@@ -20,18 +20,18 @@
         <input type="reset" value="Reset">
     </form>
 
-    {% if name %}
-        <br>
-        <b>Hello {{name}}! </b>
-        <br>
-        <i>Your message was:</i> {{message}}
-        <br>
-        <br>
-        Click <a href="/view/">here</a> to see existing messages!
-        <br>
-        Click <a href="/submit/">here</a> to submit another form!
-    {% endif %}
-
 </body>
+
+{% if name %}
+    <br>
+    <b>Hello {{name}}! </b>
+    <br>
+    <i>Your message was:</i> {{message}}
+    <br>
+    <br>
+    Click <a href="/view/">here</a> to see existing messages!
+    <br>
+    Click <a href="/submit/">here</a> to submit another form!
+{% endif %}
 
 
