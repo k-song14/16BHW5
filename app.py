@@ -19,7 +19,7 @@ def base():
 
 @app.route("/submit/", methods=['POST', 'GET'])
 def submit():
-    if request.method == 'GET':
+    if request.method == 'POST':
         # if the user just visits the url
         return render_template('submit.html')
     else:
