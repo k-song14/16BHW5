@@ -1,11 +1,11 @@
-{%extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block header %}
     <h2>{% block title %}Submit{% endblock %}</h2>
 {% endblock %}
 
-{% block content %}
-
+<body>
+    
     <form method="post">
         <label for="message">Your message:</label>
         <br>
@@ -31,5 +31,6 @@
         Click <a href="/submit/">here</a> to submit another form!
     {% endif %}
 
-{% endblock %}
+</body>
+
 
