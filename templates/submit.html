@@ -1,40 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+{%extends 'base.html' %}
 
-</html>
-<head>
-    <meta charset="UTF-8">
-    <title>Kelly Song's Website</title>
-</head>
+{% block header %}
+    <h2>{% block title %}Submit{% endblock %}</h2>
+{% endblock %}
 
-<body>
-    <div>
-        <h2>Submit</h2>
+{% block content %}
 
-        <form method="post">
-            <label for="message">Your message:</label>
-            <br>
-            <input name="message" id="message">
-            <br>
-            <label for="name">Your name or handle:</label>
-            <br>
-            <input name="name" id="name">
-            <br>
-            <input type="submit" value="Submit form">
-            <input type="reset" value="Reset">
-        </form>
+    <form method="post">
+        <label for="message">Your message:</label>
+        <br>
+        <input name="message" id="message" required>
+        <br>
+        <label for="name">Your name or handle:</label>
+        <br>
+        <input name="name" id="name" required>
+        <br>
+        <input type="submit" value="Submit form">
+        <input type="reset" value="Reset">
+    </form>
 
-    </div>
-</body>
+    {% if name %}
+        <br>
+        <b>Hello {{name}}! </b>
+        <br>
+        <i>Your message was:</i> {{message}}
+        <br>
+        <br>
+        Click <a href="/view/">here</a> to see existing messages!
+        <br>
+        Click <a href="/submit/">here</a> to submit another form!
+    {% endif %}
 
-{% if name %}
-<br>
-<b>Hello {{name}}! </b>
-<br>
-<i>Your message was:</i> {{message}}
-<br>
-<br>
-Click <a href="/view/">here</a> to see existing messages!
-<br>
-Click <a href="/submit/">here</a> to submit another form!
-{% endif %}
+{% endblock %}
+

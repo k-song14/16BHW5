@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-</html>
-<head>
-    <meta charset="UTF-8">
-    <title>Kelly Song's Website</title>
-</head>
-
-<body>
-    <div>
-
-        <h3>Your messages:</h3>
-        <br>
-        {{messages}}
-
-    </div>
-
-</body>
+{% block header %}
+  <h2>{% block title %}View all messages{% endblock %}</h2>
+{% endblock %}
