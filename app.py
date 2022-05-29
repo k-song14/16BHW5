@@ -28,7 +28,7 @@ def submit():
             message = request.form['message']
             name = request.form['name']
             # call the database function if successful submission
-            return render_template('submit.html', thanks=True, message=message, name=name)
+            return render_template('submit.html', thanks=True, message=insert_message(message), name=insert_message(name))
         except:
             return render_template('submit.html', error=True)
 
