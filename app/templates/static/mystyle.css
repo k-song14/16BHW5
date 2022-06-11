@@ -1,0 +1,33 @@
+html {
+    font-family: sans-serif;
+    background-color: lavender;
+    padding: 1rem;
+}
+
+h1 {
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+h2 {
+
+    font-weight: bold;
+    color: purple;
+}
+
+form {
+    background: lavender;
+    width: 50%;
+}
+
+input:hover{
+
+    border: 2px solid indigo;
+    border-radius: 4px;
+  }
+
+
+
